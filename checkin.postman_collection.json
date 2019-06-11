@@ -1,0 +1,716 @@
+{
+	"info": {
+		"_postman_id": "a844fd3d-ef2c-2f02-b6e3-258e0a73c624",
+		"name": "金控入口網 check in",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "登入",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "77081377-64d9-4be1-b25f-7cfe32c458c0",
+						"exec": [
+							"",
+							"// var jsonObject = String(responseBody);",
+							"// jsonObject = jsonObject.replace('<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 3.2//EN\">','');",
+							"// jsonObject = jsonObject.replace('<!-- Copyright (C) 2000 Tivoli Systems, Inc. -->','');",
+							"// jsonObject = jsonObject.replace('<!-- Copyright (C) 1999 IBM Corporation -->','');",
+							"// jsonObject = jsonObject.replace('<!-- Copyright (C) 1998 Dascom, Inc. -->','');",
+							"// jsonObject = jsonObject.replace('<!-- All Rights Reserved. -->','');",
+							"// jsonObject = jsonObject.replace('<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">','');",
+							"// jsonObject = jsonObject.replace(\"<!--form name='formRedirectEai' action='/cxlpt/' target='_top'-->\",'');",
+							"// jsonObject = jsonObject.replace('JavaScript','\"JavaScript\"');",
+							"// jsonObject = jsonObject",
+							"// console.log(jsonObject);",
+							"// jsonObject = JSON.parse(jsonObject);",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "max-age=0"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Length",
+						"value": "67"
+					},
+					{
+						"key": "Host",
+						"value": "w3.cathaylife.com.tw"
+					},
+					{
+						"key": "Origin",
+						"value": "https://w3.cathaylife.com.tw"
+					},
+					{
+						"key": "Referer",
+						"value": "https://w3.cathaylife.com.tw/eai/ZPWeb/login.jsp?"
+					},
+					{
+						"key": "Upgrade-Insecure-Requests",
+						"value": "1"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+					},
+					{
+						"key": "X-Forwarded-For",
+						"value": "61.216.89.235",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						},
+						{
+							"key": "mobileError",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "deviceType",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://w3.cathaylife.com.tw/eai/ZPWeb/login",
+					"protocol": "https",
+					"host": [
+						"w3",
+						"cathaylife",
+						"com",
+						"tw"
+					],
+					"path": [
+						"eai",
+						"ZPWeb",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "首頁 index.jsp",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b08637b0-c028-48e8-bffa-67b17e6cf483",
+						"exec": [
+							"const $ = cheerio.load(pm.response.text());",
+							"",
+							"",
+							"pm.environment.set(\"UserId\", $(\"input[name='__UserID__']\").val());",
+							"pm.environment.set(\"NetType\", $(\"input[name='__NetType__']\").val());",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Forwarded-For",
+						"value": "61.216.89.235",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://w3.cathaylife.com.tw/cxlpt/PTWeb/index.jsp",
+					"protocol": "https",
+					"host": [
+						"w3",
+						"cathaylife",
+						"com",
+						"tw"
+					],
+					"path": [
+						"cxlpt",
+						"PTWeb",
+						"index.jsp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login input",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "X-Forwarded-For",
+						"value": "61.216.89.235",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "__UserID__",
+							"value": "{{UserId}}",
+							"type": "text"
+						},
+						{
+							"key": "__NetType__",
+							"value": "{{NetType}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://w3.cathaylife.com.tw/cxlpt/CXPWeb/servlet/HttpDispatcher/login/input?sysCode=PT&url=PTEX_0001/index",
+					"protocol": "https",
+					"host": [
+						"w3",
+						"cathaylife",
+						"com",
+						"tw"
+					],
+					"path": [
+						"cxlpt",
+						"CXPWeb",
+						"servlet",
+						"HttpDispatcher",
+						"login",
+						"input"
+					],
+					"query": [
+						{
+							"key": "sysCode",
+							"value": "PT"
+						},
+						{
+							"key": "url",
+							"value": "PTEX_0001/index"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PTEX_0001",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Forwarded-For",
+						"value": "61.216.89.235",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://w3.cathaylife.com.tw/PTWeb/servlet/HttpDispatcher/PTEX_0001/index",
+					"protocol": "https",
+					"host": [
+						"w3",
+						"cathaylife",
+						"com",
+						"tw"
+					],
+					"path": [
+						"PTWeb",
+						"servlet",
+						"HttpDispatcher",
+						"PTEX_0001",
+						"index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "redirect",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4f18ceb8-9cfd-4e9b-bc8f-6459fffffd3b",
+						"exec": [
+							"const $ = cheerio.load(pm.response.text());",
+							"",
+							"",
+							"pm.environment.set(\"redirect_UserId\", $(\"input[name='__UserID__']\").val());",
+							"pm.environment.set(\"redirect_NetType\", $(\"input[name='__NetType__']\").val());",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Forwarded-For",
+						"value": "61.216.89.235",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://w3.cathaylife.com.tw/cxlpt/PTWeb/redirect.jsp?Project=fkEBafPage&csrSysCode=FK&csrPageCode=FKZ5_3000&csrPageType=prompt&=",
+					"protocol": "https",
+					"host": [
+						"w3",
+						"cathaylife",
+						"com",
+						"tw"
+					],
+					"path": [
+						"cxlpt",
+						"PTWeb",
+						"redirect.jsp"
+					],
+					"query": [
+						{
+							"key": "Project",
+							"value": "fkEBafPage"
+						},
+						{
+							"key": "csrSysCode",
+							"value": "FK"
+						},
+						{
+							"key": "csrPageCode",
+							"value": "FKZ5_3000"
+						},
+						{
+							"key": "csrPageType",
+							"value": "prompt"
+						},
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FKWeb input",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "X-Forwarded-For",
+						"value": "61.216.89.235",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "__UserID__",
+							"value": "{{redirect_UserId}}",
+							"type": "text"
+						},
+						{
+							"key": "__NetType__",
+							"value": "{{redirect_NetType}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://go.linyuan.com.tw/FKWeb/servlet/HttpDispatcher/login/input?sysCode=FK&url=FKZ5_3000/prompt&haveSetMainUriButToPage=Y",
+					"protocol": "https",
+					"host": [
+						"go",
+						"linyuan",
+						"com",
+						"tw"
+					],
+					"path": [
+						"FKWeb",
+						"servlet",
+						"HttpDispatcher",
+						"login",
+						"input"
+					],
+					"query": [
+						{
+							"key": "sysCode",
+							"value": "FK"
+						},
+						{
+							"key": "url",
+							"value": "FKZ5_3000/prompt"
+						},
+						{
+							"key": "haveSetMainUriButToPage",
+							"value": "Y"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FKZ5_3000 prompt",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b4825550-dd59-40d5-bf25-fce5f629c4c6",
+						"exec": [
+							"var response = pm.response.text();",
+							"",
+							"pm.globals.set(\"FK_eBAF_UserObject_Flag\", response.substr(response.indexOf('FK_eBAF_UserObject_Flag')+26,32));",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Forwarded-For",
+						"value": "61.216.89.235",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://go.linyuan.com.tw/FKWeb/servlet/HttpDispatcher/FKZ5_3000/prompt",
+					"protocol": "https",
+					"host": [
+						"go",
+						"linyuan",
+						"com",
+						"tw"
+					],
+					"path": [
+						"FKWeb",
+						"servlet",
+						"HttpDispatcher",
+						"FKZ5_3000",
+						"prompt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FKZ5_3000 attendance",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "37bd5334-8e74-4daf-ab46-04da2cf5bde3",
+						"exec": [
+							"// var userFlag = pm.sessionStorage.getItem('FK_eBAF_UserObject_Flag');",
+							"// pm.globals.set(\"FK_eBAF_UserObject_Flag\", \"userFlag\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Forwarded-For",
+						"value": "61.216.89.235",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://go.linyuan.com.tw/FKWeb/servlet/HttpDispatcher/FKZ5_3000/attendance?_=1360142413",
+					"protocol": "https",
+					"host": [
+						"go",
+						"linyuan",
+						"com",
+						"tw"
+					],
+					"path": [
+						"FKWeb",
+						"servlet",
+						"HttpDispatcher",
+						"FKZ5_3000",
+						"attendance"
+					],
+					"query": [
+						{
+							"key": "_",
+							"value": "1360142413"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "final checkIn",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "https://go.linyuan.com.tw/FKWeb/servlet/HttpDispatcher/FKZ5_3000/prompt",
+						"type": "text"
+					},
+					{
+						"key": "X-Forwarded-For",
+						"value": "61.216.89.235",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "APLYOT",
+							"value": "N",
+							"type": "text"
+						},
+						{
+							"key": "ATNDN",
+							"value": "ATNDN_EARLY_RESN",
+							"type": "text"
+						},
+						{
+							"key": "RESN",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "test_login_timestamp",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://go.linyuan.com.tw/FKWeb/servlet/HttpDispatcher/FKZ5_3000/checkIn?eBAF_UserObject_Flag={{FK_eBAF_UserObject_Flag}}",
+					"protocol": "https",
+					"host": [
+						"go",
+						"linyuan",
+						"com",
+						"tw"
+					],
+					"path": [
+						"FKWeb",
+						"servlet",
+						"HttpDispatcher",
+						"FKZ5_3000",
+						"checkIn"
+					],
+					"query": [
+						{
+							"key": "eBAF_UserObject_Flag",
+							"value": "{{FK_eBAF_UserObject_Flag}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "final checkOut succes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "X-Requested-With",
+						"type": "text",
+						"value": "XMLHttpRequest"
+					},
+					{
+						"key": "Referer",
+						"type": "text",
+						"value": "https://go.linyuan.com.tw/FKWeb/servlet/HttpDispatcher/FKZ5_3000/prompt"
+					},
+					{
+						"key": "X-Forwarded-For",
+						"type": "text",
+						"value": "61.216.89.235"
+					},
+					{
+						"key": "Host",
+						"type": "text",
+						"value": "go.linyuan.com.tw"
+					},
+					{
+						"key": "Origin",
+						"type": "text",
+						"value": "https://go.linyuan.com.tw"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "APLYOT",
+							"value": "N",
+							"type": "text"
+						},
+						{
+							"key": "ATNDN",
+							"value": "ATNDN_EARLY_RESN",
+							"type": "text"
+						},
+						{
+							"key": "RESN",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "test_login_timestamp",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://go.linyuan.com.tw/FKWeb/servlet/HttpDispatcher/FKB0_0600/checkin?eBAF_UserObject_Flag={{FK_eBAF_UserObject_Flag}}",
+					"protocol": "https",
+					"host": [
+						"go",
+						"linyuan",
+						"com",
+						"tw"
+					],
+					"path": [
+						"FKWeb",
+						"servlet",
+						"HttpDispatcher",
+						"FKB0_0600",
+						"checkin"
+					],
+					"query": [
+						{
+							"key": "eBAF_UserObject_Flag",
+							"value": "{{FK_eBAF_UserObject_Flag}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "467b0ded-fdc7-412a-80f4-0560d65f2a63",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8559a155-140b-4efd-8b88-4955276c243d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
