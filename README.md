@@ -79,8 +79,7 @@ And run it, you will receive alert mail.
 
 ![alert mail](images/monitor_alert_mail.png)
 
-# Cathay holdings login url
-[員工入口網](https://w3.cathaylife.com.tw/eai/ZPWeb/login.jsp?)
+# Demo auto login
 
 ## Use Chrome debug mode
 Setting->更多工具->開發人員工具(shortcut: command + option + i)
