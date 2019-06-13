@@ -64,7 +64,7 @@ You can setting receive email when run fail.
 ### Open web page
 Click monitor column will open monitor web page.
 ![open web page](images/monitor_web_page.png)
-If clcik run button, it will create report.
+If click run button, it will create report.
 ![report](images/monitor_report.png)
 
 ## Auto send alert mail
