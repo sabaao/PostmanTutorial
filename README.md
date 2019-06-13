@@ -1,8 +1,8 @@
-# Skill
+# Postman tutorial and auto login
+## Skill
 Html, Javascript, Chrome debug mode.
 
-# Prepare install
-## Postman
+## Postman install
 Download and install from [here](https://www.getpostman.com/downloads/).
 
 # Postman tutorial
