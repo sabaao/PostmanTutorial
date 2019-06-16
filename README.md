@@ -29,6 +29,7 @@ Download and install from [here](https://www.getpostman.com/downloads/).
 ![config](images/postman_configuration_mock_server.png)
 
 ## Get mock server url
+Postman will create a online mock server.
 ![mock server url](images/postman_get_mock_server_url.png)
 
 ## Add mock api
@@ -123,11 +124,14 @@ newman -v
 ```bash
 newman run checkin.postman_collection.json --environment cathay.prod.postman_environment.json 
 ```
+If you want how to set schedule in MacOS,
+you can reference [this](https://www.jianshu.com/p/b65c1d339eec).
+
 ## Check out
 ```bash
 newman run checkout.postman_collection.json --environment cathay.prod.postman_environment.json 
 ```
-
+You can set check out in Monitor server.
 # Restrict
 Must use cathaybk wifi.
 
