@@ -1,0 +1,1 @@
+newman run checkout.postman_collection.json --environment charles_cathay.postman_environment.json 

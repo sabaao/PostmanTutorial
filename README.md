@@ -132,6 +132,20 @@ you can reference [this](https://www.jianshu.com/p/b65c1d339eec).
 newman run checkout.postman_collection.json --environment cathay.prod.postman_environment.json 
 ```
 You can set check out in Monitor server.
+
+# Create Robo on MacOS
+## Create an application on MacOS
+
+Follow this [article](https://ephrain.net/mac-%E4%BD%BF%E7%94%A8-automator-%E5%BB%BA%E7%AB%8B%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F%EF%BC%8C%E8%AE%93-shell-script-%E5%9C%A8%E7%99%BB%E5%85%A5%E6%99%82%E8%87%AA%E5%8B%95%E5%9F%B7%E8%A1%8C/) to create an application from shell script.
+```
+PATH="/usr/local/bin:$PATH"
+/usr/local/bin/newman run /Users/caichengfu/Develop/github/PostmanTutorial/checkout.postman_collection.json -e /Users/caichengfu/Develop/github/PostmanTutorial/charles_cathay.postman_environment.json
+```
+
+## Set automation
+Follow this [article](https://www.minwt.com/mac/17720.html) and install Scheduler for Macintosh.
+![scheduler setting](images/scheduler_setting.png)
+
 # Restrict
 Must use cathaybk wifi.
 
