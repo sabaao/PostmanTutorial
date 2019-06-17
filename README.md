@@ -22,6 +22,7 @@ Download and install from [here](https://www.getpostman.com/downloads/).
 ![script sample](images/script_sample.png)
 
 # Mock Server
+
 ## Create mock server
 ![create mock server](images/postman_create_mock_server.png)
 
@@ -141,6 +142,7 @@ Follow this [article](https://ephrain.net/mac-%E4%BD%BF%E7%94%A8-automator-%E5%B
 PATH="/usr/local/bin:$PATH"
 /usr/local/bin/newman run /Users/caichengfu/Develop/github/PostmanTutorial/checkout.postman_collection.json -e /Users/caichengfu/Develop/github/PostmanTutorial/charles_cathay.postman_environment.json
 ```
+![automator](images/automator.png)
 
 ## Set automation
 Follow this [article](https://www.minwt.com/mac/17720.html) and install Scheduler for Macintosh.
