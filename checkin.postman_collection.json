@@ -62,10 +62,6 @@
 						"value": "keep-alive"
 					},
 					{
-						"key": "Content-Length",
-						"value": "67"
-					},
-					{
 						"key": "Host",
 						"value": "w3.cathaylife.com.tw"
 					},
